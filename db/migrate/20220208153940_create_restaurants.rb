@@ -4,7 +4,7 @@ class CreateRestaurants < ActiveRecord::Migration[6.1]
       t.string :name, null: false
       t.string :adress, null: false
       t.string :category, null: false
-      t.string :phone_number
+      t.string :phone_number, inclusion: { in: ["chinese", "italian", "japanese", "french", "belgian"] }
 
       t.timestamps
     end
