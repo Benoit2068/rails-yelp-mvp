@@ -1,8 +1,14 @@
-<h1>Restaurants List</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-6 offset-3">
+      <h1>Restaurants List</h1>
 
-<% @restaurants.each do |restaurant| %>
-  <h2><%= restaurant.name %></h2>
-  <p>Address : <%= restaurant.address %></p>
-  <p>Tel : <%= restaurant.phone_number %> </p>
-  <p>Category : <%= restaurant.category  %></p>
-<% end %>
+      <% @restaurants.each do |restaurant| %>
+        <h2><%= restaurant.name %></h2>
+        <p>Category : <%= restaurant.category  %></p>
+        <p><%= link_to "show restaurant's details", restaurant_path(restaurant) %></p>
+      <% end %>
+    </div>
+  </div>
+  <h1> <%= link_to "Add new restaurant", new_restaurant_path %></h1>
+</div>
